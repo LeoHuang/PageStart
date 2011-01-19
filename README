@@ -1,0 +1,6 @@
+配置步骤：
+rake db:migrate
+rake db:seed
+
+主帐户默认密码为：test@test
+可在 db\seeds.rb 修改 

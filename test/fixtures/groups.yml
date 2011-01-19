@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  floor_id: 1
+  name: MyString
+  postion_at: 1
+  status: MyString
+
+two:
+  user_id: 1
+  floor_id: 1
+  name: MyString
+  postion_at: 1
+  status: MyString

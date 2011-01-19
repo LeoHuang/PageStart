@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @link.user_id %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%= @link.group_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @link.name %>
+</p>
+
+<p>
+  <b>Postion at:</b>
+  <%= @link.postion_at %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @link.url %>
+</p>
+
+<p>
+  <b>Favicon img:</b>
+  <%= @link.favicon_img %>
+</p>
+
+<p>
+  <b>Rank:</b>
+  <%= @link.rank %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @link.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_link_path(@link) %> |
+<%= link_to 'Back', links_path %>

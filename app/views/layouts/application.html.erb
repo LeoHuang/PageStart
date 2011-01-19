@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) || "start page" %></title>
+  <%= stylesheet_link_tag 'style','btn' %>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.1.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="/stylesheets/tipsy.css" type="text/css" media="screen" />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
+  <script type="text/javascript" src="/javascripts/jquery.tipsy.js"></script>
+  <%= javascript_include_tag 'rails' %>
+  <%= csrf_meta_tag %>
+	<% if user_signed_in? and (@user==current_user) and !current_user.locked_page %>
+	 <script src="/javascripts/jquery.jeditable.mini.js" type="text/javascript"></script>
+	 <script src="/javascripts/application.js" type="text/javascript"></script>
+	<% end %>
+ 
+  <link rel="shortcut icon" href="/favicon.ico" />
+
+</head>
+<body>
+<div id="Top">	<% if user_signed_in? %>    
+	    Signed in as <%= current_user.email %>. Not you?    
+	    <%= link_to "Sign out", 'logout' %>
+	    <% if current_user == @user %><br />
+		<a href="/account/lock_page/<%= !current_user.locked_page %>" data-method="post" rel="nofollow"><%= current_user.locked_page ? 'Unlock' : 'Lock' %> page</a> | <a href="/account/protect_page/<%= !current_user.protect_page %>" data-method="post" rel="nofollow">Make <%= !current_user.protect_page ? 'Protect' : 'Public' %></a>
+		<% end %>
+	
+	  <% else %>    
+	    <%= link_to "Sign up", 'signup' %> or    
+	    <%= link_to "Sign in", '/login' %>    
+	  <% end %></div>
+	<div id="wash-page">
+		<% if user_signed_in? %>
+		<img src="/images/trash_yellow_empty.png" style="display: none;">
+		<img src="/images/trash_yellow_full.png" style="display: none;">
+		<% end %>
+		<div id="wash">	
+		</div>
+	</div>
+	<div id="Root">
+<%= yield %>
+</div>
+<div id="Bottom">&copy; 2010 histart.me - making things easier<br />thanks OLIVIDA</div> 
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7bf53907055eb4ed39e19cded518e71c' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-255248-12']);
+  _gaq.push(['_setDomainName', '.histart.me']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

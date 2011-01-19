@@ -1,0 +1,55 @@
+<% title "Start page" %> 
+<div style="float: right"><a href="https://mail.google.com/" target="_blank">Gmail</a>&nbsp; <a href="https://www.google.com/reader" target="_blank">Reader</a>&nbsp; <a href="https://www.google.com/analytics" target="_blank">Analytics</a>&nbsp; <a href="https://www.google.com/adsense" target="_blank">AdSense</a>&nbsp; <a href="https://www.instapaper.com/" target="_blank">Instapaper</a></div> 
+<strong style="color: #999"><img src="/images/icon.png" align="absmiddle" style="margin-top: -4px;" />  <a href="http://histart.me/">Hi, <%= @user ? @user.name : 'Start' %></a></strong> 
+<div class="sep"></div> 
+<form target="_blank" method="get" action="http://www.google.com/search"> 
+<input type="hidden" name="forid" value="1" /> 
+<input type="hidden" name="ie" value="UTF-8" /> 
+<input type="hidden" name="hl" value="en-US" /> 
+<input type="text" name="q" id="google" class="sl" /> <input type="submit" value="Google Search" class="super normal button" /> 
+</form>
+<div class="sep"></div>
+<% @floors.each do |floor| %>
+<div class="floor" fid="<%= floor.id %>">
+<% floor.groups.order('postion_at').each do |group| %>	
+	<div class="column" gid="<%= group.id %>" id="group-<%= group.id %>" <%= 'na=1' if group.kind==1 %>> 
+		<div class="column_title groupeditable" gid="<%= group.id %>"><%= group.name %></div> 
+		<ul class="nav linkwp">
+			<% links = @user.links.limit(10).order("hit_count DESC, created_at DESC") if group.kind==1
+			 	links ||= group.links %>
+			<% links.each do |link| %>
+			<li><% unless link.favicon_img.blank? -%><img align="absmiddle" style="width:16px;height:16px;padding-bottom: 3px;" src="<%= link.favicon_img %>"/>&nbsp;<% end -%><a href="<%= link.url %>" lid="<%= link.id %>" target="_blank"><%= link.name %></a></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+<div class="clear"></div> 
+<div class="sep"></div> 
+</div>
+<% end %>
+<div class="clear"></div>
+<div style="display: none;">
+	<a id="new_link_btn" href="#new_link_form">new link</a>
+	<form id="new_link_form" action="#" class="standard_form" method="post"><div style="margin:0;padding:0;display:inline">
+		</div> 
+     
+	<h3>创建新URL</h3>
+
+	  <div class="field"> 
+	    <label for="link_name">Name</label><br /> 
+	    <input id="link_name" class="sl2" name="link[name]" size="30" type="text" /> 
+	  </div> 
+	  <div class="field"> 
+	    <label for="link_url">Url</label><br /> 
+	    <input id="link_url" class="sl2" name="link[url]" size="30" type="text" value="http://" style="width:220px;"/> 
+	  </div> 
+	  <div class="field"> 
+	    <label for="link_favicon_img">图标(大小16x16)</label><br /> 
+	    <input id="link_favicon_img" class="sl2" name="link[favicon_img]" size="30" type="text" style="width:220px;" />
+		<br /><span id="favimg"></span>
+	  </div>
+	  <div class="actions" style="margin-top:5px;margin-bottom: 20px;"> 
+	    <input id="link_submit" class="super normal button" name="commit" type="submit" value="Create Link" /> 
+	  </div>
+	</form>
+</div>

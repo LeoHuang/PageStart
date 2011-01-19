@@ -1,0 +1,220 @@
+@charset "utf-8"
+
+html {
+	height: 100%;
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "STHeiti";
+	background-color: #e2e2e2;
+	min-width: 920px;
+	background-image: url("/images/tile01.jpg");
+}
+input[type=text] {
+	border: 1px solid #CCC;
+	border-bottom-left-radius: 3px 3px;
+	border-bottom-right-radius: 3px 3px;
+	border-top-left-radius: 3px 3px;
+	border-top-right-radius: 3px 3px;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 3px;
+}
+
+form .field{
+ margin-bottom: 18px;
+}
+
+standard_form form label, .standard_form label, label.standard
+{
+color: #666;
+}
+
+a:link, a:visited, a:active {
+	color: #1c7fdb;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #1785eb;
+	text-decoration: underline;
+}
+
+a.orange:link, a.orange:visited, a.orange:active {
+	color: #ff9900;
+	text-decoration: none;
+}
+
+a.orange:hover {
+	color: #e18700;
+	text-decoration: underline;
+}
+
+/* IDs */
+
+#Root {
+	width: 800px;
+	margin: 20px auto 0px auto;
+	background-color: #fff;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 2px solid rgba(0,0,0,0.05);
+	padding: 10px;
+	font-size: 15px;
+	-webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.6);
+}
+
+#Wrapper
+{
+	margin: 30px;
+}
+
+#Top, #Bottom {
+	width: 800px;
+	margin: 0px auto 20px auto;	
+	font-size: 10px;
+	color: #fff;
+	padding: 5px 10px 0px 10px;
+	text-align: right;
+}
+
+#floor{
+	min-height:150px;
+	width: 100%;
+}
+
+#Top a, #Bottom a{
+	font-size: 10px;
+	color: #fff;
+	text-decoration: underline;
+}
+
+/* CLASSes */
+
+.sep {
+	margin: 10px 0px 10px 0px;
+	border-top: 1px solid #f0f0f0;
+}
+
+.column {
+	float: left;
+	font-size: 12px;
+	margin-right: 10px;
+	background-color: #f9f9f9;
+	padding: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.column_title {
+	color: #ccc;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.clear {
+	clear: both;
+}
+
+ul.nav {
+	padding: 0px;
+	margin: 6px 0px 0px 0px;
+	list-style: none;
+}
+
+ul.nav li {
+	padding: 4px 0px 0px 0px;
+	font-size: 14px;
+}
+
+a.link_del
+{
+margin-left:3px;	
+}
+
+.sl {
+	padding: 3px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	width: 400px;
+	font-size: 16px;
+	color: #000;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	font-family: "Panic Sans", Luxi Mono, "Courier New", Monaco;
+}
+
+.sl1 input {
+	border: 1px solid #CCC;
+	border-bottom-left-radius: 3px 3px;
+	border-bottom-right-radius: 3px 3px;
+	border-top-left-radius: 3px 3px;
+	border-top-right-radius: 3px 3px;
+	font-size: 14px;
+	padding: 3px;
+}
+
+
+.sl2 {
+	border: 1px solid #CCC;
+	border-bottom-left-radius: 3px 3px;
+	border-bottom-right-radius: 3px 3px;
+	border-top-left-radius: 3px 3px;
+	border-top-right-radius: 3px 3px;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 3px;	
+    width: 150px;
+}
+
+.btn{
+color: #333;
+font-size: 13px;
+font-weight: bold;
+}
+
+.olive {
+	color: #3b3;
+}
+
+.super.button {
+	background-image: url("/images/bg_blended.png");
+	padding: 4px 15px 4px 15px;
+	border: 1px solid rgba(0,0,0,.25);
+	border-bottom-color: rgba(0,0,0,.35);
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+.normal.button { background-color: #fff; color: #333; text-shadow: 0px 1px 1px #fff; text-decoration: none; font-weight: bold; }
+.normal.button:hover { background-color: #f0f0f0; color: #333; text-shadow: 0px 1px 1px #fff; text-decoration: none; text-decoration: none; font-weight: bold; cursor: pointer; }
+
+#wash-page{
+  	position: fixed;
+	right: 10px;
+	z-index: 999;
+   	bottom: 10px;
+}
+#wash {
+   height: 256px;
+   width: 256px;
+   display: block;
+}
+
+.wash-visit {
+	background: url(/images/trash_yellow_empty.png) no-repeat;
+}
+
+.wash-on {
+	background: url("/images/trash_yellow_full.png") no-repeat;
+}

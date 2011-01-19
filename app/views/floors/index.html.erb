@@ -1,0 +1,31 @@
+<h1>Listing floors</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Name</th>
+    <th>Postion at</th>
+    <th>Status</th>
+    <th>Group ids</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @floors.each do |floor| %>
+  <tr>
+    <td><%= floor.user_id %></td>
+    <td><%= floor.name %></td>
+    <td><%= floor.postion_at %></td>
+    <td><%= floor.status %></td>
+    <td><%= floor.group_ids %></td>
+    <td><%= link_to 'Show', floor %></td>
+    <td><%= link_to 'Edit', edit_floor_path(floor) %></td>
+    <td><%= link_to 'Destroy', floor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Floor', new_floor_path %>

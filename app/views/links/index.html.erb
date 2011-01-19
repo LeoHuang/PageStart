@@ -1,0 +1,37 @@
+<h1>Listing links</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Group</th>
+    <th>Name</th>
+    <th>Postion at</th>
+    <th>Url</th>
+    <th>Favicon img</th>
+    <th>Rank</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @links.each do |link| %>
+  <tr>
+    <td><%= link.user_id %></td>
+    <td><%= link.group_id %></td>
+    <td><%= link.name %></td>
+    <td><%= link.postion_at %></td>
+    <td><%= link.url %></td>
+    <td><%= link.favicon_img %></td>
+    <td><%= link.rank %></td>
+    <td><%= link.status %></td>
+    <td><%= link_to 'Show', link %></td>
+    <td><%= link_to 'Edit', edit_link_path(link) %></td>
+    <td><%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Link', new_link_path %>
